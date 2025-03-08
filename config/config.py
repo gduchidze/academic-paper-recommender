@@ -1,15 +1,3 @@
-from pydantic_settings import BaseSettings
+from sentence_transformers import SentenceTransformer
 
-
-class Settings(BaseSettings):
-    MONGODB_ATLAS_USERNAME: str
-    MONGODB_ATLAS_PASSWORD: str
-    MONGODB_ATLAS_HOST: str
-    MONGODB_ATLAS_DB_NAME: str
-    MONGODB_ATLAS_COLLECTION_NAME: str
-    MONGODB_ATLAS_VECTOR_SEARCH_INDEX_NAME: str
-
-    class Config:
-        env_file = '.env'
-
-settings = Settings()
+model = SentenceTransformer('all-MiniLM-L6-v2')
