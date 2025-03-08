@@ -1,4 +1,4 @@
-from config.config import model
+from config.config import model, logger
 from database.connection import collection
 
 
@@ -16,11 +16,19 @@ def search_papers(query, top_k=5):
                 }
             }
         },
+        {
+            "$project": {
+                "title": 1,
+                "keywords": 1,
+                "publication_year": 1,
+                "score": {"$meta": "searchScore"}
+            }
+        },
         {"$limit": top_k}
     ]
 
     results = collection.aggregate(pipeline)
     for result in results:
-        print(f"Title: {result['title']}\n{result['keywords']}\n Year: {result['publication_year']}")
+        logger.info(f"Title: {result['title']}\n Keywords: {result['keywords']}\n Publication Year: {result['publication_year']}")
 
-search_papers("Articles about Neural Networks")
+search_papers("Microservice Arcitecture in Software Engieering")
