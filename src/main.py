@@ -44,7 +44,7 @@ def search_papers(query: str, top_k: int = 5) -> List[Dict[str, Any]]:
 
         for i, result in enumerate(results, 1):
             logger.info(
-                f"შედეგი #{i}:\n"
+                f"შედეგი {i}:\n"
                 f"  სათაური: {result.get('title', 'N/A')}\n"
                 f"  საკვანძო სიტყვები: {result.get('keywords', [])}\n"
                 f"  წელი: {result.get('publication_year', 'N/A')}\n"
@@ -58,4 +58,4 @@ def search_papers(query: str, top_k: int = 5) -> List[Dict[str, Any]]:
 
 
 if __name__ == "__main__":
-    search_papers("Phenomelogy")
+    search_papers("Deep Leraning Papers")
