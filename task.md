@@ -7,9 +7,6 @@ Develop a research paper recommendation system using MongoDB Atlas Vector Search
 - Programming Language: Python
 - Database: MongoDB Atlas
 - Additional Libraries: 
-  * `pymongo`
-  * `sentence-transformers`
-  * `numpy`
 
 ## Assignment Tasks
 
@@ -80,8 +77,6 @@ Create a report analyzing:
 3. Performance analysis report
 4. Presentation slides explaining your approach
 ```
-
-## Recommended Project Structure
 paper_recommender/
 │
 ├── data/
